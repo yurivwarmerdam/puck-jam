@@ -3,9 +3,10 @@ extends KinematicBody2D
 export var speed : int = 200
 export var jumpForce : int = 600
 export var gravity : int = 1600
+export var canDoubleJump : bool = false
 
-var velocity : Vector2 = Vector2()
-var grounded : bool = false
+var _velocity : Vector2 = Vector2()
+var _isGrounded : bool = false
 
 onready var sprite = $Sprite
 
@@ -17,20 +18,20 @@ func _process(delta):
 	pass
 
 func _physics_process (delta):
-	velocity.x = 0
+	_velocity.x = 0
 	
 	if Input.is_action_pressed("move_left"):
-		velocity.x -= speed
+		_velocity.x -= speed
 	if Input.is_action_pressed("move_right"):
-		velocity.x += speed
+		_velocity.x += speed
 	
-	velocity = move_and_slide(velocity, Vector2.UP)
-	velocity.y  += gravity * delta
+	_velocity = move_and_slide(_velocity, Vector2.UP)
+	_velocity.y  += gravity * delta
 	
-	if Input.is_action_pressed("jump") and is_on_floor():
-		velocity.y -= jumpForce
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		_velocity.y -= jumpForce
 		
-	if velocity.x < 0:
+	if _velocity.x < 0:
 		sprite.flip_h = true
-	elif velocity.x > 0:
+	elif _velocity.x > 0:
 		sprite.flip_h = false
