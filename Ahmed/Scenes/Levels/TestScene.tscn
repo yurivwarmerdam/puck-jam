@@ -8,8 +8,7 @@
 [node name="Test Scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 46, 198 )
-jumpForce = 800
+position = Vector2( 48, 208 )
 
 [node name="Level Tiles" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
