@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui_stuff/ui_frame_L.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui_stuff/ui_frame.tscn" type="PackedScene" id=2]
+
+[node name="customer_ui" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ui_frame_L" parent="." instance=ExtResource( 1 )]
+margin_right = 128.0
+margin_bottom = 270.0
+
+[node name="ui_frame" parent="." instance=ExtResource( 2 )]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 112.0
+margin_bottom = 64.0
