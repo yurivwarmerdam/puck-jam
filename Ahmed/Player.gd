@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
-var speed : int = 200
-var jumpForce : int = 600
-var gravity : int = 800
+export var speed : int = 200
+export var jumpForce : int = 600
+export var gravity : int = 1600
+
 var velocity : Vector2 = Vector2()
 var grounded : bool = false
 
