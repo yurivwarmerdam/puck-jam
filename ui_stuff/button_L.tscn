@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui_stuff/button_L.png" type="Texture" id=1]
+
+[node name="button" type="TextureButton"]
+margin_right = 17.0
+margin_bottom = 17.0
+texture_normal = ExtResource( 1 )
