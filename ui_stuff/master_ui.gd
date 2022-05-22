@@ -9,6 +9,9 @@ onready var panel1 =$HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer/ui_fra
 onready var panel2 =$HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer/ui_frame2
 onready var panel3 =$HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer/ui_frame3
 
+onready var product1=$HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer2/Panel/CenterContainer/TextureRect
+onready var product2=$HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer2/Panel2/CenterContainer/TextureRect
+
 onready var ring_ring=preload("res://ui_stuff/ring_ring.png")
 onready var noise=preload("res://ui_stuff/static.png")
 
@@ -48,3 +51,5 @@ func populate_panels():
 	panel2.texture=Whiteboard.customers[customer_index].thumbnail
 	panel1.texture=Whiteboard.customers[customer_index-1].thumbnail
 	panel3.texture=Whiteboard.customers[(customer_index+1) % Whiteboard.customers.size()].thumbnail
+	product1.texture=Whiteboard.customers[customer_index].products[0].image
+	product2.texture=Whiteboard.customers[customer_index].products[1].image
