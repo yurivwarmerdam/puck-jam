@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Ahmed/Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Nike/character.png" type="Texture" id=2]
 [ext_resource path="res://Ahmed/Scenes/Elements/Inventory.gd" type="Script" id=3]
-[ext_resource path="res://Ahmed/Scenes/Elements/AudioJump.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Joris/Jump3.wav" type="AudioStream" id=5]
 [ext_resource path="res://Joris/Jump2.wav" type="AudioStream" id=6]
 [ext_resource path="res://Ahmed/Scenes/Elements/Audio.gd" type="Script" id=7]
@@ -154,8 +153,6 @@ anims/Run = SubResource( 6 )
 
 [node name="Audio" type="Node" parent="."]
 script = ExtResource( 7 )
-
-[node name="AudioJump1" parent="Audio" instance=ExtResource( 4 )]
 
 [node name="AudioJump2" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 6 )
