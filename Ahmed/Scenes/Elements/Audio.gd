@@ -20,13 +20,13 @@ func playJump():
 		$AudioJump3.play()
 
 func playLand():
-	var rand = rand_range(0,99)
-	if(rand < 100):
-		$AudioLand.set_pitch_scale(0.75 + (0.5 * randf()))
-		$AudioLand.play()
-		
+	$AudioLand.set_pitch_scale(0.75 + (0.5 * randf()))
+	$AudioLand.play()
+
 func playRun():
-	$AudioRun.play()
+	#$AudioRun.play()
+	pass
 
 func stopRun():
-	$AudioRun.stop()
+	#$AudioRun.stop()
+	pass

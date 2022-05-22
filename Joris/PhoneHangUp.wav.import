@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/CrateWrong2.wav-a72223f91c315d98926793e86831ace3.sample"
+path="res://.import/PhoneHangUp.wav-b97352b36712328d8db22a57f7b1e931.sample"
 
 [deps]
 
-source_file="res://Joris/CrateWrong2.wav"
-dest_files=[ "res://.import/CrateWrong2.wav-a72223f91c315d98926793e86831ace3.sample" ]
+source_file="res://Joris/PhoneHangUp.wav"
+dest_files=[ "res://.import/PhoneHangUp.wav-b97352b36712328d8db22a57f7b1e931.sample" ]
 
 [params]
 
