@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Ahmed/Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Nike/character.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Ahmed/Scenes/Elements/Audio.gd" type="Script" id=7]
 [ext_resource path="res://Joris/Land2.wav" type="AudioStream" id=8]
 [ext_resource path="res://Joris/Run.wav" type="AudioStream" id=9]
+[ext_resource path="res://Joris/CratePickup.wav" type="AudioStream" id=10]
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 11.0
@@ -129,9 +130,9 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-offset = Vector2( 0.5, 0 )
+offset = Vector2( 1, 0 )
 region_enabled = true
-region_rect = Rect2( 52, 0, 15, 18 )
+region_rect = Rect2( 0, 18, 14, 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, -2 )
@@ -162,11 +163,11 @@ stream = ExtResource( 5 )
 
 [node name="AudioLand" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 8 )
-volume_db = -15.0
+volume_db = -21.0
 
 [node name="AudioRun" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 9 )
-volume_db = -15.0
+volume_db = -21.0
 pitch_scale = 0.5
 
 [node name="Inventory" type="Node2D" parent="." groups=["Inventory"]]
@@ -174,4 +175,5 @@ position = Vector2( 0, -25 )
 script = ExtResource( 3 )
 carriedItemOffset = 12
 
-[node name="Tween" type="Tween" parent="Inventory"]
+[node name="AudioPickup" type="AudioStreamPlayer" parent="Inventory"]
+stream = ExtResource( 10 )
