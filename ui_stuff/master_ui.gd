@@ -23,6 +23,7 @@ func _ready():
 	button_d.connect("button_down",self,"on_button_down")
 	Whiteboard.connect("customer_added",self,"_on_customer_added")
 	$test_button.connect("button_down",self,"on_test_button_pressed")
+	Whiteboard.connect("item_dropped",self,"on_item_dropped")
 
 func on_button_left():
 	customer_index=(customer_index-1) % Whiteboard.customers.size()
@@ -47,6 +48,12 @@ func _on_customer_added():
 	panel2.texture=noise
 	panel3.texture=noise
 
+func on_item_dropped(item):
+	Whiteboard.customers[customer_index].evaluate_product(item)
+	# TODO: yeah, probably?
+	populate_panels()
+	pass
+
 func populate_panels():
 	top_panel.texture=Whiteboard.customers[customer_index].image
 	panel2.texture=Whiteboard.customers[customer_index].thumbnail
@@ -56,6 +63,6 @@ func populate_panels():
 	product2.texture=Whiteboard.customers[customer_index].products[1].image
 
 func on_test_button_pressed():
-	var my_crate=preload("res://Ahmed/Scenes/Elements/Crate.tscn").instance()
-	add_child(my_crate)
+	var my_crate=Product.new()
+	#add_child(my_crate)
 	Whiteboard.emit_signal("item_dropped",my_crate)
