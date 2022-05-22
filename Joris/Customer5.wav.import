@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Customer5.wav-c467bd5d6d45ef1e154bd74daecb8d2b.sample"
+
+[deps]
+
+source_file="res://Joris/Customer5.wav"
+dest_files=[ "res://.import/Customer5.wav-c467bd5d6d45ef1e154bd74daecb8d2b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

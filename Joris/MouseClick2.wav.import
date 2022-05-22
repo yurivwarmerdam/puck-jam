@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/CrateWrong3.wav-e95bbedd8fb34ff20c87479ae1cf3158.sample"
+path="res://.import/MouseClick2.wav-948a4ecc3cd302cd696b7cace23a5f09.sample"
 
 [deps]
 
-source_file="res://Joris/CrateWrong3.wav"
-dest_files=[ "res://.import/CrateWrong3.wav-e95bbedd8fb34ff20c87479ae1cf3158.sample" ]
+source_file="res://Joris/MouseClick2.wav"
+dest_files=[ "res://.import/MouseClick2.wav-948a4ecc3cd302cd696b7cace23a5f09.sample" ]
 
 [params]
 
