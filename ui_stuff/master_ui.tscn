@@ -72,3 +72,10 @@ margin_left = 108.0
 margin_right = 125.0
 margin_bottom = 25.0
 flip_h = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/ui_frame_L/VBoxContainer"]
+margin_top = 114.0
+margin_right = 125.0
+margin_bottom = 114.0
+
+[node name="Panel" type="Panel" parent="HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer2"]
