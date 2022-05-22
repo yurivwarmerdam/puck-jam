@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "Customer",
 "language": "GDScript",
-"path": "res://customers/customer.gd"
+"path": "res://customers/customer_resource.gd"
 }, {
 "base": "Node",
 "class": "EditorTheme",
@@ -42,6 +42,10 @@ config/name="Puck-jam"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 <<<<<<<HEADrun/main_scene="res://main.tscn"
+
+[autoload]
+
+Whiteboard="*res://whiteboard.gd"
 
 [display]
 
