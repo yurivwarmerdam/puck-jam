@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ui_stuff/ui_frame_L.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ui_stuff/ui_frame.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui_stuff/button_d.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui_stuff/button_L.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ui_stuff/master_ui.gd" type="Script" id=5]
+[ext_resource path="res://ui_stuff/stylebox_ui_frame.tres" type="StyleBox" id=6]
 
 [node name="master_ui" type="Control"]
 anchor_right = 1.0
@@ -72,3 +73,55 @@ margin_left = 108.0
 margin_right = 125.0
 margin_bottom = 25.0
 flip_h = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/ui_frame_L/VBoxContainer"]
+margin_left = 28.0
+margin_top = 114.0
+margin_right = 96.0
+margin_bottom = 146.0
+size_flags_horizontal = 4
+
+[node name="Panel" type="Panel" parent="HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer2"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = ExtResource( 6 )
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer2/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.5
+margin_top = -12.5
+margin_right = 12.5
+margin_bottom = 12.5
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer2/Panel/CenterContainer"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 12.0
+margin_bottom = 12.0
+
+[node name="Panel2" type="Panel" parent="HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer2"]
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = ExtResource( 6 )
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer2/Panel2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.5
+margin_top = -12.5
+margin_right = 12.5
+margin_bottom = 12.5
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer2/Panel2/CenterContainer"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 12.0
+margin_bottom = 12.0
