@@ -5,7 +5,7 @@
 [ext_resource path="res://Ahmed/Scenes/Elements/PickUpPoint.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Ahmed/Scenes/Elements/Crate.tscn" type="PackedScene" id=4]
 
-[node name="Test Scene" type="Node2D"]
+[node name="TestScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 49, 196 )
@@ -21,6 +21,4 @@ tile_data = PoolIntArray( 983040, 0, 196608, 983041, 0, 196609, 983042, 0, 19660
 [node name="Pick Up Point" parent="." instance=ExtResource( 3 )]
 position = Vector2( 423, 240 )
 itemName = "Crate"
-
-[node name="Crate" parent="." instance=ExtResource( 4 )]
-position = Vector2( 422, 161 )
+scene_file = ExtResource( 4 )
