@@ -8,7 +8,8 @@
 [node name="Test Scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 48, 208 )
+position = Vector2( 49, 196 )
+speed = 150
 
 [node name="Level Tiles" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -19,7 +20,7 @@ tile_data = PoolIntArray( 983040, 0, 196608, 983041, 0, 196609, 983042, 0, 19660
 
 [node name="Pick Up Point" parent="." instance=ExtResource( 3 )]
 position = Vector2( 423, 240 )
-itemName = "Cabbage"
+itemName = "Crate"
 
 [node name="Crate" parent="." instance=ExtResource( 4 )]
-position = Vector2( 353, 211 )
+position = Vector2( 422, 161 )
