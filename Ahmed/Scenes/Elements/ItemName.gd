@@ -4,7 +4,6 @@ export(String) var itemName = "Item X"
 export(float) var fadeTime = 0.2
 
 onready var _itemText : Label = $ItemName
-var overrideText : String = ""
 
 func _ready():
 	_itemText.text = "Pick up " + itemName + " [E]"

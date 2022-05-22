@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Ahmed/Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Nike/character.png" type="Texture" id=2]
@@ -176,3 +176,5 @@ pitch_scale = 0.5
 position = Vector2( 0, -25 )
 script = ExtResource( 3 )
 carriedItemOffset = 12
+
+[node name="Tween" type="Tween" parent="Inventory"]
