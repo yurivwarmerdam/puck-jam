@@ -147,6 +147,6 @@ anims/Jump_Up = SubResource( 5 )
 anims/Run = SubResource( 6 )
 
 [node name="Inventory" type="Node2D" parent="." groups=["Inventory"]]
-position = Vector2( 0, -17 )
+position = Vector2( 0, -25 )
 script = ExtResource( 3 )
 carriedItemOffset = 12
