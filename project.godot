@@ -47,11 +47,6 @@ _global_script_class_icons={
 config/name="Puck-jam"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
-<<<<<<<HEADrun/main_scene="res://main.tscn"
-
-[autoload]
-
-Whiteboard="*res://whiteboard.gd"
 
 [display]
 

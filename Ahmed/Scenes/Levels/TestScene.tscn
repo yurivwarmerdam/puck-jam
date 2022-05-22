@@ -8,7 +8,7 @@
 [node name="TestScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 49, 196 )
+position = Vector2( 46, 227 )
 speed = 150
 
 [node name="Level Tiles" type="TileMap" parent="."]
