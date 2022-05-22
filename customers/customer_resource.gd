@@ -5,7 +5,6 @@ export(Texture) var image
 export(Texture) var thumbnail
 export(Array) var products
 
-
 func _init():
 	generate_person()
 	generate_products()
@@ -17,9 +16,10 @@ func generate_person():
 		thumbnail = THUMBS[index]
 
 func generate_products():
-	pass
+	for i in 2:
+		products.append(Product.new())
 
-# Careful: make sure to keep these ordere right
+# Careful: make sure to keep these ordered right
 const IMAGES:Array=[
 	preload("res://customers/image_example.png"),
 	preload("res://customers/image_2.png"),
@@ -28,5 +28,3 @@ const THUMBS:Array=[
 	preload("res://customers/thumb_example.png"),
 	preload("res://customers/thumb_2.png")
 ]
-
-const PRODUCTS:Array=[]
