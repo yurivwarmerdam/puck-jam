@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 onready var button_l = $HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer/button
 onready var button_r = $HBoxContainer/ui_frame_L/VBoxContainer/HBoxContainer/button2
@@ -22,6 +22,7 @@ func _ready():
 	button_r.connect("button_down",self,"on_button_right")
 	button_d.connect("button_down",self,"on_button_down")
 	Whiteboard.connect("customer_added",self,"_on_customer_added")
+	$test_button.connect("button_down",self,"on_test_button_pressed")
 
 func on_button_left():
 	customer_index=(customer_index-1) % Whiteboard.customers.size()
@@ -53,3 +54,8 @@ func populate_panels():
 	panel3.texture=Whiteboard.customers[(customer_index+1) % Whiteboard.customers.size()].thumbnail
 	product1.texture=Whiteboard.customers[customer_index].products[0].image
 	product2.texture=Whiteboard.customers[customer_index].products[1].image
+
+func on_test_button_pressed():
+	var my_crate=preload("res://Ahmed/Scenes/Elements/Crate.tscn").instance()
+	add_child(my_crate)
+	Whiteboard.emit_signal("item_dropped",my_crate)

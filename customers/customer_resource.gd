@@ -8,6 +8,7 @@ export(Array) var products
 func _init():
 	generate_person()
 	generate_products()
+	Whiteboard.connect("item_dropped",self,"evaluate_product")
 
 func generate_person():
 	if !image:
@@ -18,6 +19,12 @@ func generate_person():
 func generate_products():
 	for i in 2:
 		products.append(Product.new())
+
+func evaluate_product(product:Node):
+	for want in products:
+		if want.name == product.name:
+			product.destroy()
+			return
 
 # Careful: make sure to keep these ordered right
 const IMAGES:Array=[

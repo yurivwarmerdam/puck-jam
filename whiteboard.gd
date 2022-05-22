@@ -3,6 +3,7 @@ extends Node
 var customers:Array=[]
 
 signal customer_added
+signal item_dropped
 
 onready var customer_timer:Timer
 

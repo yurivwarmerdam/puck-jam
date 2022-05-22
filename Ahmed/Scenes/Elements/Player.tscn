@@ -107,9 +107,9 @@ shape = SubResource( 3 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 process_mode = 0
-drag_margin_h_enabled = true
 smoothing_enabled = true
 smoothing_speed = 10.0
+offset_h = 0.86
 offset_v = -1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
