@@ -28,18 +28,12 @@ _global_script_classes=[ {
 "class": "EditorTheme",
 "language": "GDScript",
 "path": "res://addons/aseprite_importer/classes/EditorTheme.gd"
-}, {
-"base": "Resource",
-"class": "Product",
-"language": "GDScript",
-"path": "res://products/product.gd"
 } ]
 _global_script_class_icons={
 "AsepriteImportData": "",
 "AsepriteImporter": "",
 "Customer": "",
-"EditorTheme": "",
-"Product": ""
+"EditorTheme": ""
 }
 
 [application]
@@ -47,6 +41,11 @@ _global_script_class_icons={
 config/name="Puck-jam"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
+<<<<<<<HEADrun/main_scene="res://main.tscn"
+
+[autoload]
+
+Whiteboard="*res://whiteboard.gd"
 
 [display]
 
