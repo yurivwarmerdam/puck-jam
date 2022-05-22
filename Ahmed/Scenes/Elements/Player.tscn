@@ -1,8 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Ahmed/Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Nike/character.png" type="Texture" id=2]
 [ext_resource path="res://Ahmed/Scenes/Elements/Inventory.gd" type="Script" id=3]
+[ext_resource path="res://Ahmed/Scenes/Elements/AudioJump.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Joris/Jump3.wav" type="AudioStream" id=5]
+[ext_resource path="res://Joris/Jump2.wav" type="AudioStream" id=6]
+[ext_resource path="res://Ahmed/Scenes/Elements/Audio.gd" type="Script" id=7]
+[ext_resource path="res://Joris/Land2.wav" type="AudioStream" id=8]
+[ext_resource path="res://Joris/Run.wav" type="AudioStream" id=9]
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 11.0
@@ -145,6 +151,26 @@ anims/Idle = SubResource( 4 )
 anims/Jump_Down = SubResource( 7 )
 anims/Jump_Up = SubResource( 5 )
 anims/Run = SubResource( 6 )
+
+[node name="Audio" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="AudioJump1" parent="Audio" instance=ExtResource( 4 )]
+
+[node name="AudioJump2" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 6 )
+
+[node name="AudioJump3" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 5 )
+
+[node name="AudioLand" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 8 )
+volume_db = -15.0
+
+[node name="AudioRun" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 9 )
+volume_db = -15.0
+pitch_scale = 0.5
 
 [node name="Inventory" type="Node2D" parent="." groups=["Inventory"]]
 position = Vector2( 0, -25 )

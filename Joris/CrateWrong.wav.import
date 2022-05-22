@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CrateWrong.wav-090ecf3b5bd47e41f6bcd7a78c2fbfad.sample"
+
+[deps]
+
+source_file="res://Joris/CrateWrong.wav"
+dest_files=[ "res://.import/CrateWrong.wav-090ecf3b5bd47e41f6bcd7a78c2fbfad.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
