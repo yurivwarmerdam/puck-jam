@@ -9,6 +9,7 @@ func _init():
 	generate_person()
 	generate_products()
 
+
 func generate_person():
 	if !image:
 		var index=randi() % IMAGES.size()
@@ -18,6 +19,13 @@ func generate_person():
 func generate_products():
 	for i in 2:
 		products.append(Product.new())
+
+func evaluate_product(product):
+	for want in products:
+		if want.name == product.name:
+			product.destroy()
+			products.erase(want)
+			return
 
 # Careful: make sure to keep these ordered right
 const IMAGES:Array=[
