@@ -29,12 +29,14 @@ func on_button_left():
 	customer_index=(customer_index-1) % Whiteboard.customers.size()
 	print("index:"+str(customer_index))
 	populate_panels()
+	$AudioUI.playPhoneButtonClick()
 
 func on_button_right():
 	customer_index= (customer_index+1) % Whiteboard.customers.size()
 	print("index:"+str(customer_index))
 	populate_panels()
-	
+	$AudioUI.playPhoneButtonClick()
+
 func on_button_down():
 	pickup()
 
@@ -47,6 +49,7 @@ func _on_customer_added():
 	panel1.texture=noise
 	panel2.texture=noise
 	panel3.texture=noise
+	$AudioUI.playPhoneRing()
 
 func on_item_dropped(item):
 	Whiteboard.customers[customer_index].evaluate_product(item)
