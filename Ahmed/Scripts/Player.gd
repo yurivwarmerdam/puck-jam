@@ -62,6 +62,9 @@ func _physics_process (delta):
 		if _timeInAir > coyoteTime:
 			if _state != PlayerState.IN_AIR:
 				_timeInAir = 0;
+			
+			if _velocity.y > 0 && _state == PlayerState.IN_AIR:
+				_animationPlayer.play("Jump_Down")	
 				
 			_updateAnimationState(PlayerState.IN_AIR)
 			$Audio.stopRun()
