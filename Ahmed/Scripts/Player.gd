@@ -42,12 +42,14 @@ func _physics_process (delta):
 		
 		if _state == PlayerState.IDLE:
 			_updateAnimationState(PlayerState.RUNNING)
+			$Audio.playRun()
 		
 	if Input.is_action_pressed("move_right"):
 		_velocity.x += speed
 		
 		if _state == PlayerState.IDLE:
 			_updateAnimationState(PlayerState.RUNNING)
+			$Audio.playRun()
 		
 	_velocity = move_and_slide(_velocity, Vector2.UP)
 	
@@ -55,12 +57,17 @@ func _physics_process (delta):
 	if is_on_floor():
 		if _state == PlayerState.IN_AIR:
 			_updateAnimationState(PlayerState.IDLE)
+			$Audio.playLand()
 	else:
 		if _timeInAir > coyoteTime:
 			if _state != PlayerState.IN_AIR:
 				_timeInAir = 0;
+			
+			if _velocity.y > 0 && _state == PlayerState.IN_AIR:
+				_animationPlayer.play("Jump_Down")	
 				
 			_updateAnimationState(PlayerState.IN_AIR)
+			$Audio.stopRun()
 	
 	if Input.is_action_just_pressed("jump") && (_state != PlayerState.IN_AIR || _timeInAir < coyoteTime):
 		_velocity.y = -jumpForce
@@ -69,10 +76,14 @@ func _physics_process (delta):
 			_timeInAir = 0 
 			
 		_updateAnimationState(PlayerState.IN_AIR)
+		$Audio.stopRun()
+		$Audio.playJump()
+
 		
 	if Input.is_action_just_released("move_left") or Input.is_action_just_released("move_right"):
 		if _state != PlayerState.IN_AIR:
 			_updateAnimationState(PlayerState.IDLE)
+			$Audio.stopRun()
 		
 	if _velocity.x < 0:
 		sprite.flip_h = true
