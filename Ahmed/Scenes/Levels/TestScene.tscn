@@ -20,5 +20,4 @@ tile_data = PoolIntArray( 983040, 0, 196608, 983041, 0, 196609, 983042, 0, 19660
 
 [node name="Pick Up Point" parent="." instance=ExtResource( 3 )]
 position = Vector2( 423, 240 )
-itemName = "Crate"
 scene_file = ExtResource( 4 )
