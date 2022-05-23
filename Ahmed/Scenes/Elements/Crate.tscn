@@ -27,12 +27,12 @@ texture = ExtResource( 1 )
 position = Vector2( 0, -5 )
 shape = SubResource( 1 )
 
-[node name="Item Name" type="Area2D" parent="."]
+[node name="ItemName" type="Area2D" parent="."]
 collision_layer = 4
 script = ExtResource( 3 )
 itemName = ""
 
-[node name="ItemName" type="Label" parent="Item Name"]
+[node name="ItemName" type="Label" parent="ItemName"]
 anchor_right = 0.5
 margin_left = -9.0
 margin_top = -15.0
@@ -42,9 +42,9 @@ rect_scale = Vector2( 0.241665, 0.241665 )
 text = "Pick Up [E]"
 align = 1
 
-[node name="Tween" type="Tween" parent="Item Name"]
+[node name="Tween" type="Tween" parent="ItemName"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Item Name"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemName"]
 position = Vector2( 0, -5 )
 shape = SubResource( 3 )
 
@@ -54,5 +54,5 @@ shape = SubResource( 3 )
 position = Vector2( 0, -5 )
 shape = SubResource( 4 )
 
-[connection signal="body_entered" from="Item Name" to="Item Name" method="_on_Item_Name_body_entered"]
-[connection signal="body_exited" from="Item Name" to="Item Name" method="_on_Item_Name_body_exited"]
+[connection signal="body_entered" from="ItemName" to="ItemName" method="_on_Item_Name_body_entered"]
+[connection signal="body_exited" from="ItemName" to="ItemName" method="_on_Item_Name_body_exited"]
