@@ -10,9 +10,7 @@
 [ext_resource path="res://Joris/Run.wav" type="AudioStream" id=9]
 [ext_resource path="res://Joris/CratePickup.wav" type="AudioStream" id=10]
 
-[sub_resource type="CapsuleShape2D" id=3]
-radius = 11.0
-height = 0.0
+[sub_resource type="RectangleShape2D" id=8]
 
 [sub_resource type="Animation" id=4]
 length = 0.8
@@ -136,7 +134,7 @@ region_rect = Rect2( 0, 18, 14, 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, -2 )
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -175,5 +173,7 @@ position = Vector2( 0, -25 )
 script = ExtResource( 3 )
 carriedItemOffset = 12
 
+[node name="Tween" type="Tween" parent="Inventory"]
+[node name="CarriedItems" type="Node2D" parent="Inventory"]
 [node name="AudioPickup" type="AudioStreamPlayer" parent="Inventory"]
 stream = ExtResource( 10 )
