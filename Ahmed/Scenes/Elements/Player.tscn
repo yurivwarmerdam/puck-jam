@@ -174,6 +174,8 @@ script = ExtResource( 3 )
 carriedItemOffset = 12
 
 [node name="Tween" type="Tween" parent="Inventory"]
+
 [node name="CarriedItems" type="Node2D" parent="Inventory"]
+
 [node name="AudioPickup" type="AudioStreamPlayer" parent="Inventory"]
 stream = ExtResource( 10 )

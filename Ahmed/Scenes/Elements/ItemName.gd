@@ -10,7 +10,6 @@ func _ready():
 	_itemText.modulate.a = 0
 
 func _on_Item_Name_body_entered(body):
-	print(body.name)
 	_tween_text_visibility(0, 1)
 
 func _on_Item_Name_body_exited(body):

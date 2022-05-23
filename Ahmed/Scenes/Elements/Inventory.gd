@@ -6,16 +6,23 @@ export (float) var inventoryFullFlashAnimationTime = 0.2
 
 onready var _carriedItemsNode : Node2D = $CarriedItems
 
-func _onItemPickedUp(item : PackedScene):
+func isInventoryFull():
+	return _carriedItemsNode.get_child_count() >= maxItemCapacity
+
+func _onItemPickedUp(item : Node2D):
 	var numberOfPickedUpItems = _carriedItemsNode.get_child_count()
 	
-	if numberOfPickedUpItems < maxItemCapacity:
-		var instancedItem : Node2D = item.instance()
-		instancedItem.position.y = instancedItem.position.y - carriedItemOffset * numberOfPickedUpItems
+	if !isInventoryFull():
+		var worldItems = get_tree().get_nodes_in_group("WorldItems")
+		worldItems[0].remove_child(item)
+		_carriedItemsNode.add_child(item)
 		
-		_carriedItemsNode.add_child(instancedItem)
+		item.global_position = global_position
+		
+		item.position.y = -carriedItemOffset * numberOfPickedUpItems
 	else:
-		flashItemsFull(inventoryFullFlashAnimationTime)
+		item.queue_free()
+		_flashItemsFull(inventoryFullFlashAnimationTime)
 
 func _physics_process (delta):
 	var pickedUpItems = _carriedItemsNode.get_children()
@@ -30,7 +37,7 @@ func _physics_process (delta):
 		lastPickedUpItem.global_position = globalPosition
 		lastPickedUpItem.isActive = true
 
-func flashItemsFull(animationTime):
+func _flashItemsFull(animationTime):
 	for i in range(_carriedItemsNode.get_child_count()):
 		var currentChild = _carriedItemsNode.get_child(i)
 		var sprite : Sprite = currentChild.get_node("Sprite");
